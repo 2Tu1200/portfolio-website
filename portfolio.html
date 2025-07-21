@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushil KS - Portfolio | Medical Language, Workflow Automation & BI Specialist</title>
+    <meta name="description" content="Experienced Workflow Automation, Business Intelligence and Medical Language Specialist with 20+ years of expertise in scribing, BI, data analytics, cloud computing, and digital transformation.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 5px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+            display: block;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .skill-category i {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #667eea;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 0 2rem;
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-right: 1rem;
+            width: 30px;
+        }
+
+        /* Certificate Upload Section */
+        .certificate-upload {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .upload-area {
+            border: 2px dashed #667eea;
+            padding: 2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .upload-area:hover {
+            background-color: rgba(102, 126, 234, 0.1);
+        }
+
+        .upload-area.dragover {
+            background-color: rgba(102, 126, 234, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #667eea;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+            }
+
+            .timeline-content {
+                margin: 1rem 0;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Sushil KS</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMTAwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiLz4KPHN2ZyB4PSI1MCIgeT0iNTAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSJub25lIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgo8cGF0aCBkPSJNMTIgMTJjMi4yMSAwIDQtMS43OSA0LTRzLTEuNzktNC00LTQtNCAxLjc5LTQgNCAxLjc5IDQgNCA0em0wIDJjLTIuNjcgMC04IDEuMzQtOCA0djJoMTZ2LTJjMC0yLjY2LTUuMzMtNC04LTR6IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4KPC9zdmc+" alt="Profile" class="profile-image" id="profileImg">
+            <h1>Sushil KS</h1>
+            <h2>Medcial Language, Workflow Automation & Business Intelligence Specialist</h2>
+            <p>20+ years of cross-industry expertise in data analytics, cloud computing, and digital transformation</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>About Me</h2>
+                <p>Results-driven senior professional with extensive cross-industry experience</p>
+            </div>
+            <div class="about-content fade-in">
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        Years Experience
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">8+</span>
+                        Years IT Operations
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">90+</span>
+                        Certifications
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">40+</span>
+                        GitHub Contributions
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Professional Summary</h3>
+                    <p>Results-driven senior professional with 20+ years of cross-industry (BFI + healthcare) exposure, including 8+ years in IT operations. A medical language, BI and workflow automation specialist through MS Power Platform, UiPath Studio-X, n8n, and Zapier, with proven expertise in web-app feature engineering and business intelligence.</p>
+                    
+                    <p>Adept at leveraging cutting-edge analytics tools including MS Fabric, Power BI, Snowflake, Tableau, SAS, R, SQL, NoSQL, Python, and cloud ecosystems to deliver data-driven solutions that optimize performance and fuel growth.</p>
+                    
+                    <p>With a proven track record in business analytics and operational excellence, I'm open to global relocation and actively seeking opportunities in business process workflow automation, BI, data analytics & engineering, and technical operations.</p>
+
+                    <h4>Educational Background</h4>
+                    <p><strong>Master of Business Administration (MBA)</strong><br>
+                    Systems and Marketing<br>
+                    DAVV, Indore - 2003</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Core Competencies</h2>
+                <p>Comprehensive expertise across multiple technology domains</p>
+            </div>
+            <div class="skills-grid fade-in">
+                <div class="skill-category">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Business Intelligence</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">SAS</span>
+                        <span class="skill-tag">Looker</span>
+                        <span class="skill-tag">BigQuery</span>
+                        <span class="skill-tag">Snowflake</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <i class="fas fa-robot"></i>
+                    <h3>Workflow Automation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">UiPath</span>
+                        <span class="skill-tag">Power Automate</span>
+                        <span class="skill-tag">Automation Anywhere</span>
+                        <span class="skill-tag">n8n</span>
+                        <span class="skill-tag">Zapier</span>
+                        <span class="skill-tag">MS Power Platform</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <i class="fas fa-database"></i>
+                    <h3>Data & Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PySpark</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">NoSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">GraphQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Computing</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">GCP</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">DevOps</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <i class="fas fa-code"></i>
+                    <h3>Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Streamlit</span>
+                        <span class="skill-tag">DAX</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Digital Marketing</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SEO/SEM</span>
+                        <span class="skill-tag">Google Analytics</span>
+                        <span class="skill-tag">Google Ads</span>
+                        <span class="skill-tag">Content Creation</span>
+                        <span class="skill-tag">Live Scribing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Professional Experience</h2>
+                <p>A journey through diverse industries and challenging roles</p>
+            </div>
+            <div class="experience-timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Process Specialist - Microsoft Nuance</h3>
+                        <h4>CTS (Cognizant)</h4>
+                        <p><strong>April 2023 - September 2024</strong></p>
+                        <p>Delivered workflow automation and data analytics solutions for Microsoft Nuance. Leveraged Power BI and Power Automate to streamline processes and improve efficiency. Currently enhancing skills through Labmantrix internship.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Faculty Mentor</h3>
+                        <h4>Lakshya Computer Training Center</h4>
+                        <p><strong>Aug 2018 - Sep 2019, Mar 2020 - Apr 2023, Oct 2024 - Present</strong></p>
+                        <p>Trainer and mentor faculty for Big Data, BI, data analytics and engineering, SEO-SEM, and digital marketing. Developed curriculum and hands-on projects for PySpark, Tableau, and Power BI.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Medical Language Specialist</h3>
+                        <h4>Nuance Transcription Services & IDS InfoTech</h4>
+                        <p><strong>Jan 2012 - Aug 2018</strong></p>
+                        <p>Medical Language Specialist (MLS Grade-1) HBE. Consistently maintained FIESA quality scores of 99.5+% and achieved "Credentialed MLS" status. Also worked as Notable Health Analyst in OG Healthcare.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Senior Operations Executive</h3>
+                        <h4>IBM GBPS</h4>
+                        <p><strong>Feb 2006 - Jan 2012</strong></p>
+                        <p>Data processing, process development, workflow automation and BI. Consistently maintained Best Contributor Award for overall process development. Automated workflows and implemented BI solutions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>CAM/Credit Underwriter Executive</h3>
+                        <h4>ICICI Bank</h4>
+                        <p><strong>Sep 2004 - Mar 2006</strong></p>
+                        <p>Worked in new car loans department, New Delhi. Gained valuable experience in banking and financial services sector with focus on credit assessment and underwriting processes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Featured Projects</h2>
+                <p>Showcasing my technical expertise through real-world applications</p>
+            </div>
+            <div class="projects-grid fade-in">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>DayFlow AI Application</h3>
+                        <p>Self-contained AI application with unparalleled features that uses self-contained data for AI inferences. Built with modern web technologies and deployed on Vercel.</p>
+                        <div class="project-links">
+                            <a href="https://day-flow-v1-0.vercel.app/" class="btn btn-primary" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>SmartCare FSS</h3>
+                        <p>Portfolio web application as an entrepreneur demonstrating healthcare contributions, analytics and BI solutions under brand name i-Smart smartcare FSS. Features comprehensive data visualization and user-friendly interface.</p>
+                        <div class="project-links">
+                            <a href="https://vercel.com/2tus-projects/2tu_smartcare-fss" class="btn btn-primary" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Data Analytics Notebook</h3>
+                        <p>Comprehensive Kaggle notebook showcasing advanced data analytics techniques, statistical analysis, and machine learning implementations with real-world datasets.</p>
+                        <div class="project-links">
+                            <a href="https://www.kaggle.com/code/tu212223/notebook89abe5249c" class="btn btn-primary" target="_blank">View on Kaggle</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>GitHub Repository</h3>
+                        <p>40+ contributions showcasing diverse range of interests and expertise including automation scripts, data analysis tools, and web applications.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/2Tu1200" class="btn btn-primary" target="_blank">View Repository</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Get In Touch</h2>
+                <p>Let's connect and discuss how I can help with your next project</p>
+            </div>
+            <div class="contact-grid fade-in">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>2tu12031978@Gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 7654475436</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>B S City, Bokaro, Jharkhand, India</p>
+                        </div>
+                    </div>
+                    <div class="social-links" style="justify-content: flex-start; margin-top: 2rem;">
+                        <a href="https://linkedin.com/in/sushilks" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/2Tu1200" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/sushilks" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <form id="contactForm">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Name</label>
+                            <input type="text" id="name" name="name" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px;" required>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email</label>
+                            <input type="email" id="email" name="email" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px;" required>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Subject</label>
+                            <input type="text" id="subject" name="subject" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px;" required>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message</label>
+                            <textarea id="message" name="message" rows="5" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px;" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Certifications & Achievements</h2>
+                <p>Professional certifications and recognition in the industry</p>
+            </div>
+            <div class="fade-in">
+                <div class="certificate-upload">
+                    <h3>Download Certificates</h3>
+                    <p>Upload and download professional certificates</p>
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem;"></i>
+                        <p>Drag & drop certificate files here or click to browse</p>
+                        <input type="file" id="fileInput" multiple accept=".pdf,.jpg,.jpeg,.png" style="display: none;">
+                    </div>
+                    <div id="fileList" style="margin-top: 2rem;"></div>
+                </div>
+                
+                <div style="margin-top: 3rem; background: white; padding: 2rem; border-radius: 15px;">
+                    <h3>Key Certifications & Achievements</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px;">
+                            <h4>Google Certifications</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li><i class="fas fa-certificate" style="color: #667eea; margin-right: 0.5rem;"></i>Google Analytics (GAIQ) Certified</li>
+                                <li><i class="fas fa-certificate" style="color: #667eea; margin-right: 0.5rem;"></i>Google Ads Certified</li>
+                                <li><i class="fas fa-certificate" style="color: #667eea; margin-right: 0.5rem;"></i>Google Analytics for Beginners & Advanced</li>
+                            </ul>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px;">
+                            <h4>Professional Certifications</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li><i class="fas fa-certificate" style="color: #667eea; margin-right: 0.5rem;"></i>Pro5.ai MS-PBI Certified</li>
+                                <li><i class="fas fa-certificate" style="color: #667eea; margin-right: 0.5rem;"></i>UiPath RPA Developer</li>
+                                <li><i class="fas fa-certificate" style="color: #667eea; margin-right: 0.5rem;"></i>AWS Cloud Practitioner</li>
+                            </ul>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px;">
+                            <h4>Industry Recognition</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li><i class="fas fa-award" style="color: #667eea; margin-right: 0.5rem;"></i>Best Contributor Award - IBM</li>
+                                <li><i class="fas fa-award" style="color: #667eea; margin-right: 0.5rem;"></i>Credentialed MLS - Nuance</li>
+                                <li><i class="fas fa-award" style="color: #667eea; margin-right: 0.5rem;"></i>Top Faculty - Lakshya Computer</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/sushilks" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/2Tu1200" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/sushilks" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://kaggle.com/tu212223" target="_blank"><i class="fab fa-kaggle"></i></a>
+            </div>
+            <p>&copy; 2025 Sushil KS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-in animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Certificate upload functionality
+            const uploadArea = document.getElementById('uploadArea');
+            const fileInput = document.getElementById('fileInput');
+            const fileList = document.getElementById('fileList');
+            
+            uploadArea.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+            
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('dragover');
+            });
+            
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                
+                if (e.dataTransfer.files.length) {
+                    handleFiles(e.dataTransfer.files);
+                }
+            });
+            
+            fileInput.addEventListener('change', () => {
+                if (fileInput.files.length) {
+                    handleFiles(fileInput.files);
+                }
+            });
+            
+            function handleFiles(files) {
+                for (const file of files) {
+                    // In a real application, you would upload the file to a server here
+                    // For this demo, we'll just display the file name
+                    const fileItem = document.createElement('div');
+                    fileItem.style.padding = '1rem';
+                    fileItem.style.marginBottom = '0.5rem';
+                    fileItem.style.background = 'white';
+                    fileItem.style.borderRadius = '5px';
+                    fileItem.style.display = 'flex';
+                    fileItem.style.justifyContent = 'space-between';
+                    fileItem.style.alignItems = 'center';
+                    
+                    const fileName = document.createElement('span');
+                    fileName.textContent = file.name;
+                    
+                    const downloadBtn = document.createElement('a');
+                    downloadBtn.innerHTML = '<i class="fas fa-download"></i>';
+                    downloadBtn.style.color = '#667eea';
+                    downloadBtn.style.cursor = 'pointer';
+                    downloadBtn.style.fontSize = '1.2rem';
+                    // In a real application, this would be a link to download the file
+                    downloadBtn.href = '#';
+                    downloadBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert('Download functionality would be implemented in a real application.');
+                    });
+                    
+                    fileItem.appendChild(fileName);
+                    fileItem.appendChild(downloadBtn);
+                    fileList.appendChild(fileItem);
+                }
+            }
+            
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // In a real application, you would send the form data to a server here
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
+
