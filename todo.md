@@ -56,7 +56,7 @@
 ## Current Updates (January 2025)
 - [x] Add user's profile picture to replace placeholder icon
 - [x] Update CSS styling for profile image with proper border and shadow
-- [ ] Test the updated website locally
-- [ ] Commit and push changes to GitHub
-- [ ] Deploy updated version to Vercel
+- [x] Test the updated website locally
+- [x] Commit and push changes to GitHub
+- [x] Deploy updated version to Vercel (auto-deployment)
 

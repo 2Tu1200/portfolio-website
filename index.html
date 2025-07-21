@@ -35,16 +35,38 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 0.8rem 0;
+            padding: 0.5rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        header.collapsed {
+            padding: 0.3rem 0;
+            background: rgba(255, 255, 255, 0.9);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: #4caf50;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .nav-toggle:hover {
+            background: rgba(76, 175, 80, 0.1);
         }
 
         .logo {
@@ -70,6 +92,19 @@
             display: flex;
             list-style: none;
             gap: 0.5rem;
+            transition: all 0.3s ease;
+            max-height: 60px;
+            overflow: hidden;
+        }
+
+        .nav-links.hidden {
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .nav-links.visible {
+            max-height: 60px;
+            opacity: 1;
         }
 
         .nav-links li a {
@@ -267,8 +302,18 @@
         .section-title p {
             font-size: 1.1rem;
             color: #666;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @media (max-width: 768px) {
+            .section-title p {
+                white-space: normal;
+                font-size: 1rem;
+            }
         }
 
         /* About Section */
@@ -654,10 +699,13 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header id="header">
         <nav class="container">
             <a href="#home" class="logo">Sushil KS<span class="logo-number">1</span></a>
-            <ul class="nav-links">
+            <button class="nav-toggle" onclick="toggleNavigation()">
+                <i class="fas fa-chevron-up" id="nav-toggle-icon"></i>
+            </button>
+            <ul class="nav-links visible" id="nav-links">
                 <li><a href="#home" class="nav-home">Home<span class="nav-number">2</span></a></li>
                 <li><a href="#about" class="nav-about">About<span class="nav-number">3</span></a></li>
                 <li><a href="#skills" class="nav-skills">Skills<span class="nav-number">4</span></a></li>
@@ -1100,6 +1148,27 @@
     </footer>
 
     <script>
+        // Toggle Navigation Function
+        function toggleNavigation() {
+            const navLinks = document.getElementById('nav-links');
+            const header = document.getElementById('header');
+            const toggleIcon = document.getElementById('nav-toggle-icon');
+            
+            if (navLinks.classList.contains('visible')) {
+                navLinks.classList.remove('visible');
+                navLinks.classList.add('hidden');
+                header.classList.add('collapsed');
+                toggleIcon.classList.remove('fa-chevron-up');
+                toggleIcon.classList.add('fa-chevron-down');
+            } else {
+                navLinks.classList.remove('hidden');
+                navLinks.classList.add('visible');
+                header.classList.remove('collapsed');
+                toggleIcon.classList.remove('fa-chevron-down');
+                toggleIcon.classList.add('fa-chevron-up');
+            }
+        }
+
         // Mobile Navigation
         document.addEventListener('DOMContentLoaded', function() {
             const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
