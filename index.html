@@ -480,6 +480,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s;
             position: relative;
+            cursor: pointer;
         }
 
         .certification-card:hover {
@@ -494,6 +495,13 @@
             justify-content: center;
             color: #999;
             font-size: 2.5rem;
+            overflow: hidden;
+        }
+
+        .certification-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .certification-content {
@@ -515,6 +523,266 @@
 
         .certification-actions a:hover {
             text-decoration: underline;
+        }
+
+        /* Certificate Gallery Controls */
+        .cert-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .search-container {
+            position: relative;
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 2.5rem 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #4a6bff;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .filter-container {
+            min-width: 200px;
+        }
+
+        .filter-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #4a6bff;
+        }
+
+        /* Certificate Grid */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .certificate-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .certificate-thumbnail {
+            height: 200px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certificate-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .certificate-card:hover .certificate-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .certificate-category {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: rgba(74, 107, 255, 0.9);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .certificate-info {
+            padding: 1.5rem;
+        }
+
+        .certificate-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        .certificate-issuer {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .certificate-date {
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #666;
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+
+        .no-results h3 {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        /* Certificate Modal */
+        .cert-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2000;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            margin: 2rem auto;
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.3s;
+        }
+
+        .modal-close:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-header {
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modal-header h3 {
+            margin: 0 0 0.5rem;
+            color: #333;
+        }
+
+        .modal-header p {
+            margin: 0;
+            color: #666;
+        }
+
+        .modal-body {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .modal-body img {
+            max-width: 100%;
+            max-height: 60vh;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .cert-controls {
+                flex-direction: column;
+            }
+            
+            .certificates-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .modal-content {
+                margin: 1rem;
+                max-width: calc(100vw - 2rem);
+            }
+            
+            .modal-header,
+            .modal-body {
+                padding: 1.5rem;
+            }
         }
 
         /* Contact Section */
@@ -971,89 +1239,67 @@
                 <h2>Certifications & Achievements</h2>
                 <p>Professional certifications and recognition in the industry</p>
             </div>
-            <div class="certifications-grid">
-                <!-- Certification cards will be dynamically added here -->
-                <div class="certification-card">
-                    <div class="certification-image">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Medical Language Specialist</h3>
-                        <p>Credentialed MLS - Nuance</p>
-                        <div class="certification-actions">
-                            <a href="#" class="view-cert">View Certificate</a>
-                            <a href="#" class="download-cert">Download</a>
-                        </div>
-                    </div>
+            
+            <!-- Search and Filter Controls -->
+            <div class="cert-controls">
+                <div class="search-container">
+                    <input type="text" id="cert-search" placeholder="Search certificates..." class="search-input">
+                    <i class="fas fa-search search-icon"></i>
                 </div>
-                <div class="certification-card">
-                    <div class="certification-image">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Google Analytics (GAIQ)</h3>
-                        <p>Google Certification</p>
-                        <div class="certification-actions">
-                            <a href="#" class="view-cert">View Certificate</a>
-                            <a href="#" class="download-cert">Download</a>
-                        </div>
-                    </div>
+                <div class="filter-container">
+                    <select id="cert-filter" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="cloud">Cloud Computing</option>
+                        <option value="analytics">Data Analytics</option>
+                        <option value="automation">Automation</option>
+                        <option value="ai">AI/Machine Learning</option>
+                        <option value="technical">Technical Skills</option>
+                        <option value="medical">Medical Language</option>
+                        <option value="business">Business & Marketing</option>
+                        <option value="design">Design</option>
+                        <option value="competition">Competitions</option>
+                    </select>
                 </div>
-                <div class="certification-card">
-                    <div class="certification-image">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Pro5.ai MS-PBI</h3>
-                        <p>Professional Certification</p>
-                        <div class="certification-actions">
-                            <a href="#" class="view-cert">View Certificate</a>
-                            <a href="#" class="download-cert">Download</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-image">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="certification-content">
-                        <h3>UiPath RPA Developer</h3>
-                        <p>Professional Certification</p>
-                        <div class="certification-actions">
-                            <a href="#" class="view-cert">View Certificate</a>
-                            <a href="#" class="download-cert">Download</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-image">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="certification-content">
-                        <h3>AWS Cloud Practitioner</h3>
-                        <p>Professional Certification</p>
-                        <div class="certification-actions">
-                            <a href="#" class="view-cert">View Certificate</a>
-                            <a href="#" class="download-cert">Download</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-image">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Upload Your Certificate</h3>
-                        <p>Add your certification here</p>
-                        <div class="certification-actions">
-                            <label for="cert-upload" style="cursor: pointer; color: #4a6bff;">Upload Certificate</label>
-                            <input type="file" id="cert-upload" style="display: none;" accept=".pdf,.jpg,.jpeg,.png">
-                        </div>
-                    </div>
-                </div>
+            </div>
+
+            <!-- Certificates Grid -->
+            <div class="certificates-grid" id="certificates-grid">
+                <!-- Certificates will be dynamically loaded here -->
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No certificates found</h3>
+                <p>Try adjusting your search or filter criteria</p>
             </div>
         </div>
     </section>
+
+    <!-- Certificate Modal -->
+    <div class="cert-modal" id="cert-modal">
+        <div class="modal-overlay" onclick="closeCertModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCertModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h3 id="modal-cert-title">Certificate Title</h3>
+                <p id="modal-cert-issuer">Issuing Organization</p>
+            </div>
+            <div class="modal-body">
+                <img id="modal-cert-image" src="" alt="Certificate">
+                <div class="modal-actions">
+                    <button class="btn btn-primary" onclick="downloadCertificate()">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                    <button class="btn btn-secondary" onclick="shareCertificate()">
+                        <i class="fas fa-share"></i> Share
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -1216,33 +1462,524 @@
             // Certificate upload functionality
             const certUpload = document.getElementById('cert-upload');
             
-            certUpload.addEventListener('change', function(e) {
-                if (this.files && this.files[0]) {
-                    const file = this.files[0];
-                    // In a real application, you would upload the file to a server here
-                    alert(`Certificate "${file.name}" selected. In a real application, this would be uploaded to a server.`);
+            if (certUpload) {
+                certUpload.addEventListener('change', function(e) {
+                    if (this.files && this.files[0]) {
+                        const file = this.files[0];
+                        alert(`Certificate "${file.name}" selected. In a real application, this would be uploaded to a server.`);
+                    }
+                });
+            }
+
+            // Certificate Gallery Data
+            const certificates = [
+                // Cloud Computing
+                {
+                    id: 1,
+                    title: "AWS Builders Online Series",
+                    issuer: "Amazon Web Services",
+                    category: "cloud",
+                    date: "2024",
+                    thumbnail: "./certificates/Gmail-CertificateofParticipation_AWSBuildersOnlineSeries.pdf",
+                    fullImage: "./certificates/Gmail-CertificateofParticipation_AWSBuildersOnlineSeries.pdf"
+                },
+                {
+                    id: 2,
+                    title: "Ultimate AWS Certified Cloud Practitioner",
+                    issuer: "Udemy",
+                    category: "cloud",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-UltimateAWSCertifiedCP-CLFC02.jpg",
+                    fullImage: "./certificates/UC-UltimateAWSCertifiedCP-CLFC02.jpg"
+                },
+                {
+                    id: 3,
+                    title: "Ultimate AWS Certified Solutions Architect",
+                    issuer: "Udemy",
+                    category: "cloud",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-UltimateAWScertifiedSAA-C03.jpg",
+                    fullImage: "./certificates/UC-UltimateAWScertifiedSAA-C03.jpg"
+                },
+                {
+                    id: 4,
+                    title: "AWS Solutions Architect Practice Test",
+                    issuer: "Udemy",
+                    category: "cloud",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-AWSCertifiedSA-Associate-PracticeResult.jpg",
+                    fullImage: "./certificates/UC-AWSCertifiedSA-Associate-PracticeResult.jpg"
+                },
+                {
+                    id: 5,
+                    title: "Apps on Azure",
+                    issuer: "Microsoft Learn",
+                    category: "cloud",
+                    date: "2024",
+                    thumbnail: "./certificates/Achievements-sushilkumarsingh-6498_MSLearnAppsOnAzure.pdf",
+                    fullImage: "./certificates/Achievements-sushilkumarsingh-6498_MSLearnAppsOnAzure.pdf"
+                },
+                
+                // Data Analytics
+                {
+                    id: 6,
+                    title: "Microsoft Fabric",
+                    issuer: "Microsoft Learn",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/Achievements-sushilkumarsingh-6498_MicrosoftLearnMSFabric.pdf",
+                    fullImage: "./certificates/Achievements-sushilkumarsingh-6498_MicrosoftLearnMSFabric.pdf"
+                },
+                {
+                    id: 7,
+                    title: "Microsoft Fabric Analytics",
+                    issuer: "Microsoft Learn",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/Achievements-sushilkumarsingh-6498_MicrosoftLearnMSFabricAnalytics.pdf",
+                    fullImage: "./certificates/Achievements-sushilkumarsingh-6498_MicrosoftLearnMSFabricAnalytics.pdf"
+                },
+                {
+                    id: 8,
+                    title: "Pro5 MS Power BI Certified Professional",
+                    issuer: "Pro5.ai",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/Pro5MSPBICertifiedProfessional.jpg",
+                    fullImage: "./certificates/Pro5MSPBICertifiedProfessional.jpg"
+                },
+                {
+                    id: 9,
+                    title: "Pro5 Data Analyst Certification",
+                    issuer: "Pro5.ai",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/Pro5_DA_114375369104_Sushil_Singh_a21746731278317.pdf",
+                    fullImage: "./certificates/Pro5_DA_114375369104_Sushil_Singh_a21746731278317.pdf"
+                },
+                {
+                    id: 10,
+                    title: "MS Power BI for Business Intelligence",
+                    issuer: "Udemy",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-MSPowerBIforBI.jpg",
+                    fullImage: "./certificates/UC-MSPowerBIforBI.jpg"
+                },
+                {
+                    id: 11,
+                    title: "PL-300 MS Power BI",
+                    issuer: "Udemy",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-PL300MS-PowerBI.jpg",
+                    fullImage: "./certificates/UC-PL300MS-PowerBI.jpg"
+                },
+                {
+                    id: 12,
+                    title: "Databricks SQL",
+                    issuer: "Databricks",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/SushilKSCert_Databricks-SQL-1.jpg",
+                    fullImage: "./certificates/SushilKSCert_Databricks-SQL-1.jpg"
+                },
+                {
+                    id: 13,
+                    title: "Snowflake Training Attendance",
+                    issuer: "Snowflake",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/SnowflakeTrainingAttendanceCert.pdf",
+                    fullImage: "./certificates/SnowflakeTrainingAttendanceCert.pdf"
+                },
+                {
+                    id: 14,
+                    title: "Complete SQL Bootcamp",
+                    issuer: "Udemy",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-CompleteSQLBootcamp.jpg",
+                    fullImage: "./certificates/UC-CompleteSQLBootcamp.jpg"
+                },
+                {
+                    id: 15,
+                    title: "Advanced SQL for Data Engineering",
+                    issuer: "Udemy",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-AdvanceSQLforDataEng.jpg",
+                    fullImage: "./certificates/UC-AdvanceSQLforDataEng.jpg"
+                },
+                {
+                    id: 16,
+                    title: "Advanced SQL Bootcamp",
+                    issuer: "Udemy",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-AdvanceSQLBootcamp.jpg",
+                    fullImage: "./certificates/UC-AdvanceSQLBootcamp.jpg"
+                },
+                {
+                    id: 17,
+                    title: "15 Days of SQL Masterclass",
+                    issuer: "Udemy",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-15DaysofSQLmasterclass.jpg",
+                    fullImage: "./certificates/UC-15DaysofSQLmasterclass.jpg"
+                },
+                {
+                    id: 18,
+                    title: "SQL Advanced in 15 Days",
+                    issuer: "Udemy",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-SQLAdvin15dayscert-1.jpg",
+                    fullImage: "./certificates/UC-SQLAdvin15dayscert-1.jpg"
+                },
+                {
+                    id: 19,
+                    title: "Data Engineering Essentials using Python SQL PySpark",
+                    issuer: "Udemy",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-DataEngEssentialUsingPythonSQL-PySpark.jpg",
+                    fullImage: "./certificates/UC-DataEngEssentialUsingPythonSQL-PySpark.jpg"
+                },
+                {
+                    id: 20,
+                    title: "Data Engineering using PySpark SQL",
+                    issuer: "Udemy",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-DataEngineeringUsingPySparkSQL.jpg",
+                    fullImage: "./certificates/UC-DataEngineeringUsingPySparkSQL.jpg"
+                },
+                {
+                    id: 21,
+                    title: "Data Warehousing Fundamentals",
+                    issuer: "Udemy",
+                    category: "analytics",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-DataWarehousingFundamentals.jpg",
+                    fullImage: "./certificates/UC-DataWarehousingFundamentals.jpg"
+                },
+
+                // Automation
+                {
+                    id: 22,
+                    title: "Power Automate Variables",
+                    issuer: "Microsoft Learn",
+                    category: "automation",
+                    date: "2024",
+                    thumbnail: "./certificates/Achievements-sushilkumarsingh-6498_MicrosoftLearnPowerAutoVariables.pdf",
+                    fullImage: "./certificates/Achievements-sushilkumarsingh-6498_MicrosoftLearnPowerAutoVariables.pdf"
+                },
+                {
+                    id: 23,
+                    title: "MS Power Automate",
+                    issuer: "Udemy",
+                    category: "automation",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-MSPowerAutomate.jpg",
+                    fullImage: "./certificates/UC-MSPowerAutomate.jpg"
+                },
+                {
+                    id: 24,
+                    title: "Power Automate Complete Guide",
+                    issuer: "Udemy",
+                    category: "automation",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-PowerAutomateComplGuide.jpg",
+                    fullImage: "./certificates/UC-PowerAutomateComplGuide.jpg"
+                },
+                {
+                    id: 25,
+                    title: "RPA Process Automation using UiPath",
+                    issuer: "Udemy",
+                    category: "automation",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-RPAProcessAutomationUsingUiPath.jpg",
+                    fullImage: "./certificates/UC-RPAProcessAutomationUsingUiPath.jpg"
+                },
+
+                // AI/Machine Learning
+                {
+                    id: 26,
+                    title: "AI Classify Images",
+                    issuer: "Microsoft Learn",
+                    category: "ai",
+                    date: "2024",
+                    thumbnail: "./certificates/Achievements-sushilkumarsingh-6498_MSLearnAiClassifyImages.pdf",
+                    fullImage: "./certificates/Achievements-sushilkumarsingh-6498_MSLearnAiClassifyImages.pdf"
+                },
+                {
+                    id: 27,
+                    title: "AI and ChatGPT",
+                    issuer: "Udemy",
+                    category: "ai",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-AIandChat-GPT.jpg",
+                    fullImage: "./certificates/UC-AIandChat-GPT.jpg"
+                },
+                {
+                    id: 28,
+                    title: "Machine Learning for Beginners",
+                    issuer: "Udemy",
+                    category: "ai",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-MLforBeginners.jpg",
+                    fullImage: "./certificates/UC-MLforBeginners.jpg"
+                },
+
+                // Technical Skills
+                {
+                    id: 29,
+                    title: "Python Introduction",
+                    issuer: "Microsoft Learn",
+                    category: "technical",
+                    date: "2024",
+                    thumbnail: "./certificates/Achievements-sushilkumarsingh-6498_MicrosoftLearnPythonIntro.pdf",
+                    fullImage: "./certificates/Achievements-sushilkumarsingh-6498_MicrosoftLearnPythonIntro.pdf"
+                },
+                {
+                    id: 30,
+                    title: "Enterprise Desktop",
+                    issuer: "Microsoft Learn",
+                    category: "technical",
+                    date: "2024",
+                    thumbnail: "./certificates/Achievements-sushilkumarsingh-6498_MSLearnEnterpriseDesktop.pdf",
+                    fullImage: "./certificates/Achievements-sushilkumarsingh-6498_MSLearnEnterpriseDesktop.pdf"
+                },
+                {
+                    id: 31,
+                    title: "Intra ID",
+                    issuer: "Microsoft Learn",
+                    category: "technical",
+                    date: "2024",
+                    thumbnail: "./certificates/Achievements-sushilkumarsingh-6498_MSLearnIntraID.pdf",
+                    fullImage: "./certificates/Achievements-sushilkumarsingh-6498_MSLearnIntraID.pdf"
+                },
+                {
+                    id: 32,
+                    title: "ReactJS Masterclass",
+                    issuer: "Udemy",
+                    category: "technical",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-ReactJSMasterclass.jpg",
+                    fullImage: "./certificates/UC-ReactJSMasterclass.jpg"
+                },
+
+                // Medical Language
+                {
+                    id: 33,
+                    title: "CLMS Certificate",
+                    issuer: "CLMS",
+                    category: "medical",
+                    date: "2024",
+                    thumbnail: "./certificates/clmsCertificate.pdf",
+                    fullImage: "./certificates/clmsCertificate.pdf"
+                },
+
+                // Business & Marketing
+                {
+                    id: 34,
+                    title: "Google Ads Masterclass",
+                    issuer: "Udemy",
+                    category: "business",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-GoogleAdMasterclassCert-1.jpg",
+                    fullImage: "./certificates/UC-GoogleAdMasterclassCert-1.jpg"
+                },
+                {
+                    id: 35,
+                    title: "Google Ads for Beginners",
+                    issuer: "Udemy",
+                    category: "business",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-GoogleAdsforbeg-1.jpg",
+                    fullImage: "./certificates/UC-GoogleAdsforbeg-1.jpg"
+                },
+                {
+                    id: 36,
+                    title: "Active Listening",
+                    issuer: "Udemy",
+                    category: "business",
+                    date: "2024",
+                    thumbnail: "./certificates/UC-ActiveListeningCert-1.jpg",
+                    fullImage: "./certificates/UC-ActiveListeningCert-1.jpg"
+                },
+
+                // Design
+                {
+                    id: 37,
+                    title: "Canva 10 Design Milestone",
+                    issuer: "Canva",
+                    category: "design",
+                    date: "2024",
+                    thumbnail: "./certificates/Canva10DesignMilestoneBadge.gif",
+                    fullImage: "./certificates/Canva10DesignMilestoneBadge.gif"
+                },
+
+                // Competitions
+                {
+                    id: 38,
+                    title: "Tata Crucible",
+                    issuer: "Unstop",
+                    category: "competition",
+                    date: "2024",
+                    thumbnail: "./certificates/UnstopTataCrucible.jpg",
+                    fullImage: "./certificates/UnstopTataCrucible.jpg"
+                }
+            ];
+
+            let filteredCertificates = [...certificates];
+
+            // Initialize certificate gallery
+            function initializeCertificateGallery() {
+                renderCertificates(certificates);
+                setupSearchAndFilter();
+            }
+
+            // Render certificates
+            function renderCertificates(certs) {
+                const grid = document.getElementById('certificates-grid');
+                const noResults = document.getElementById('no-results');
+                
+                if (!grid) return;
+                
+                if (certs.length === 0) {
+                    grid.innerHTML = '';
+                    if (noResults) noResults.style.display = 'block';
+                    return;
+                }
+                
+                if (noResults) noResults.style.display = 'none';
+                
+                grid.innerHTML = certs.map(cert => `
+                    <div class="certificate-card" onclick="openCertModal(${cert.id})">
+                        <div class="certificate-thumbnail">
+                            <img src="${cert.thumbnail}" alt="${cert.title}" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\\"fas fa-certificate\\" style=\\"font-size: 3rem; color: #ccc;\\"></i>';">
+                            <div class="certificate-category">${getCategoryLabel(cert.category)}</div>
+                        </div>
+                        <div class="certificate-info">
+                            <h3 class="certificate-title">${cert.title}</h3>
+                            <p class="certificate-issuer">${cert.issuer}</p>
+                            <p class="certificate-date">Issued: ${cert.date}</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Get category label
+            function getCategoryLabel(category) {
+                const labels = {
+                    'cloud': 'Cloud',
+                    'analytics': 'Analytics',
+                    'automation': 'Automation',
+                    'ai': 'AI/ML',
+                    'technical': 'Technical',
+                    'medical': 'Medical',
+                    'business': 'Business',
+                    'design': 'Design',
+                    'competition': 'Competition'
+                };
+                return labels[category] || category;
+            }
+
+            // Setup search and filter functionality
+            function setupSearchAndFilter() {
+                const searchInput = document.getElementById('cert-search');
+                const filterSelect = document.getElementById('cert-filter');
+
+                if (searchInput) searchInput.addEventListener('input', filterCertificates);
+                if (filterSelect) filterSelect.addEventListener('change', filterCertificates);
+            }
+
+            // Filter certificates
+            function filterCertificates() {
+                const searchInput = document.getElementById('cert-search');
+                const filterSelect = document.getElementById('cert-filter');
+                
+                const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+                const selectedCategory = filterSelect ? filterSelect.value : 'all';
+
+                filteredCertificates = certificates.filter(cert => {
+                    const matchesSearch = cert.title.toLowerCase().includes(searchTerm) ||
+                                        cert.issuer.toLowerCase().includes(searchTerm);
+                    const matchesCategory = selectedCategory === 'all' || cert.category === selectedCategory;
+                    
+                    return matchesSearch && matchesCategory;
+                });
+
+                renderCertificates(filteredCertificates);
+            }
+
+            // Modal functionality
+            window.openCertModal = function(certId) {
+                const cert = certificates.find(c => c.id === certId);
+                if (!cert) return;
+
+                const modal = document.getElementById('cert-modal');
+                const title = document.getElementById('modal-cert-title');
+                const issuer = document.getElementById('modal-cert-issuer');
+                const image = document.getElementById('modal-cert-image');
+                
+                if (title) title.textContent = cert.title;
+                if (issuer) issuer.textContent = cert.issuer;
+                if (image) image.src = cert.fullImage;
+                if (modal) {
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+
+                // Store current certificate for download/share
+                window.currentCertificate = cert;
+            };
+
+            window.closeCertModal = function() {
+                const modal = document.getElementById('cert-modal');
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+                window.currentCertificate = null;
+            };
+
+            window.downloadCertificate = function() {
+                if (window.currentCertificate) {
+                    const link = document.createElement('a');
+                    link.href = window.currentCertificate.fullImage;
+                    link.download = `${window.currentCertificate.title.replace(/\s+/g, '_')}_Certificate`;
+                    link.click();
+                }
+            };
+
+            window.shareCertificate = function() {
+                if (window.currentCertificate && navigator.share) {
+                    navigator.share({
+                        title: window.currentCertificate.title,
+                        text: `Check out my ${window.currentCertificate.title} certificate from ${window.currentCertificate.issuer}`,
+                        url: window.location.href
+                    });
+                } else {
+                    const url = window.location.href;
+                    navigator.clipboard.writeText(url).then(() => {
+                        alert('Certificate link copied to clipboard!');
+                    });
+                }
+            };
+
+            // Close modal on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeCertModal();
                 }
             });
-            
-            // Certificate view and download functionality
-            const viewCertBtns = document.querySelectorAll('.view-cert');
-            const downloadCertBtns = document.querySelectorAll('.download-cert');
-            
-            viewCertBtns.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const certName = this.closest('.certification-content').querySelector('h3').textContent;
-                    alert(`Viewing certificate: ${certName}. In a real application, this would open a modal or new page with the certificate.`);
-                });
-            });
-            
-            downloadCertBtns.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const certName = this.closest('.certification-content').querySelector('h3').textContent;
-                    alert(`Downloading certificate: ${certName}. In a real application, this would download the certificate file.`);
-                });
-            });
+
+            // Initialize the certificate gallery
+            initializeCertificateGallery();
             
             // Contact form submission
             const contactForm = document.getElementById('contactForm');
