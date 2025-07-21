@@ -152,6 +152,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .profile-image i {
@@ -667,7 +676,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="profile-image">
-                <i class="fas fa-user"></i>
+                <img src="profile-picture.png" alt="Sushil KS Profile Picture">
             </div>
             <h1>Sushil KS</h1>
             <h2>Workflow Automation & Business Intelligence Specialist<br>Medical Language Expert</h2>
